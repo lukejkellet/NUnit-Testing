@@ -10,24 +10,20 @@ namespace NUnit_Testing
     [TestFixture]
     internal class Circle
     {
-        [Test]
-        public void AreaTest()
+        [TestCase(4.0, 50.26548245743669)]
+        public void AreaTest(double radius, double expectedValue)
         {
             //Calculate the area of a circle.
             Calc c = new Calc();
-            double radius = 4.0;
-            double expectedValue = 50.26548245743669;
             double actualValue = radius * radius * Math.PI;
             Assert.AreEqual(expectedValue, actualValue);
         }
 
-        [Test]
-        public void PerimeterTest()
+        [TestCase(4.0, 25.132741228718345)]
+        public void PerimeterTest(double radius, double expectedValue)
         {
             //Calculate perimeter
             Calc c = new Calc();
-            double radius = 4.0;
-            double expectedValue = 25.132741228718345;
             double actualValue = 2 * radius * Math.PI;
             Assert.AreEqual(expectedValue, actualValue);
         }

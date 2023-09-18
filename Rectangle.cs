@@ -10,25 +10,19 @@ namespace NUnit_Testing
     [TestFixture]
     internal class Rectangle
     {
-        [Test]
-        public void AreaTest()
+        [TestCase(4.0, 5.0, 20.0)]
+        public void AreaTest(double length, double width, double expectedValue)
         {
             //Calculate the area of a rectangle.
             Calc c = new Calc();
-            double length = 4.0;
-            double width = 5.0;
-            double expectedValue = 20.0;
             double actualValue = length * width;
             Assert.AreEqual(expectedValue, actualValue);
         }
-        [Test]
-        public void PerimeterTest()
+        [TestCase(4.0, 5.0, 18.0)]
+        public void PerimeterTest(double length, double width, double expectedValue)
         {
             //Calculate perimeter
             Calc c = new Calc();
-            double length = 4.0;
-            double width = 5.0;
-            double expectedValue = 18.0;
             double actualValue = 2 * (length + width);
             Assert.AreEqual(expectedValue, actualValue);
         }

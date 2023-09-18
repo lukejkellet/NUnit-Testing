@@ -10,26 +10,19 @@ namespace NUnit_Testing
     [TestFixture]
     internal class Triangle
     {
-        [Test]
-        public void AreaTest()
+        [TestCase(4.0, 5.0, 10.0)]
+        public void AreaTest(double length, double width, double expectedValue)
         {
             //Calculate the area of a Triangle.
             Calc c = new Calc();
-            double length = 4.0;
-            double width = 5.0;
-            double expectedValue = 10.0;
             double actualValue = (length * width) / 2;
             Assert.AreEqual(expectedValue, actualValue);
         }
-        [Test]
-        public void PerimeterTest()
+        [TestCase(4.0, 5.0, 3.0, 12.0)]
+        public void PerimeterTest(double length, double width, double height, double expectedValue)
         {
             //Calculate perimeter
             Calc c = new Calc();
-            double length = 4.0;
-            double width = 5.0;
-            double height = 3.0;
-            double expectedValue = 12.0;
             double actualValue = length + width + height;
             Assert.AreEqual(expectedValue, actualValue);
         }

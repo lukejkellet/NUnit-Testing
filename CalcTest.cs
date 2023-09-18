@@ -10,23 +10,17 @@ namespace NUnit_Testing
     [TestFixture]
     internal class CalcTest
     {
-        [Test]
-        public void AddTest()
+        [TestCase(4.0, 5.0, 9.0)]
+        public void AddTest(double x, double y, double expectedValue)
         {
             Calc c = new Calc();
-            double x = 4.0;
-            double y = 5.0;
-            double expectedValue = 9.0;
             double actualValue = c.Add(x, y);
             Assert.AreEqual(expectedValue, actualValue);
         }
-        [Test]
-        public void SubtractTest()
+        [TestCase(4.0, 5.0, -1.0)]
+        public void SubtractTest(double x, double y, double expectedValue)
         {
             Calc c = new Calc();
-            double x = 4.0;
-            double y = 5.0;
-            double expectedValue = 0.0; 
             double actualValue = c.Subtract(x, y);
             Assert.AreEqual(expectedValue, actualValue); //will return an error in testing.
         }
